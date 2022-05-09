@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookFormFragment"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:id="@+id/formTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="TITLE"/>
+
+    <!-- Insert picture -->
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@android:drawable/btn_plus"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formTitle"
+        android:background="#00ffffff"/>
+
+    <!-- Book title -->
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formTitle"
+        android:text="@string/name"/>
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:padding="0dp"
+        app:layout_constraintLeft_toRightOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/formTitle"
+        android:inputType="text"
+        android:text="Insert name..."/>
+
+    <!-- Book Author -->
+    <TextView
+        android:id="@+id/authorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        android:text="@string/author"/>
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="0dp"
+        app:layout_constraintLeft_toRightOf="@id/authorTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        android:inputType="text"
+        android:text="Insert author..."/>
+
+    <!-- Date Start
+    https://github.com/codeWithCal/DatePickerTutorial -->
+    <TextView
+        android:id="@+id/dateStartText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/authorTextView"
+        android:text="@string/date_start"/>
+    <Button
+        android:id="@+id/dateStartButton"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:padding="0dp"
+        app:layout_constraintLeft_toRightOf="@id/dateStartText"
+        app:layout_constraintTop_toBottomOf="@id/authorTextView"
+        style="?android:spinnerStyle"
+        android:text="03 JAN 2022"
+        android:textColor="@color/black"
+        android:onClick="openDatePicker()"/>
+
+    <!-- Date End -->
+    <TextView
+        android:id="@+id/dateEndText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateStartText"
+        android:text="@string/date_end"/>
+    <Button
+        android:id="@+id/dateEndButton"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="0dp"
+        app:layout_constraintLeft_toRightOf="@id/dateEndText"
+        app:layout_constraintTop_toBottomOf="@id/dateStartText"
+        style="?android:spinnerStyle"
+        android:text="03 JAN 2022"
+        android:textColor="@color/black"
+        android:onClick="openDatePicker()"/>
+
+    <!-- Vote -->
+    <TextView
+        android:id="@+id/voteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:text="@string/vote"/>
+    <ImageButton
+        android:id="@+id/buttonVote1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintLeft_toRightOf="@id/voteText"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:background="#00ffffff" />
+    <ImageButton
+        android:id="@+id/buttonVote2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintLeft_toRightOf="@id/buttonVote1"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:background="#00ffffff" />
+    <ImageButton
+        android:id="@+id/buttonVote3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintLeft_toRightOf="@id/buttonVote2"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:background="#00ffffff" />
+    <ImageButton
+        android:id="@+id/buttonVote4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintLeft_toRightOf="@id/buttonVote3"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:background="#00ffffff" />
+    <ImageButton
+        android:id="@+id/buttonVote5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintLeft_toRightOf="@id/buttonVote4"
+        app:layout_constraintTop_toBottomOf="@id/dateEndText"
+        android:background="#00ffffff" />
+
+    <!-- Review / notes -->
+    <TextView
+        android:id="@+id/reviewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voteText"
+        android:text="@string/review"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:background="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reviewText"
+        android:inputType="text"
+        android:text="INSERT REVIEW OR NOTES ABOUT THE BOOK"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
